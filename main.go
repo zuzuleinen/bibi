@@ -2,19 +2,19 @@ package main
 
 import (
 	"fmt"
+	"github.com/fatih/color"
 	"github.com/yhat/scrape"
 	"golang.org/x/net/html"
 	"golang.org/x/net/html/atom"
 	"math/rand"
 	"net/http"
 	"time"
-	"github.com/fatih/color"
 )
 
 const (
-	fetchUrl = "https://en.wikipedia.org/wiki/List_of_cognitive_biases"
+	fetchUrl      = "https://en.wikipedia.org/wiki/List_of_cognitive_biases"
 	wikiPrefixUrl = "https://en.wikipedia.org"
-	tableClass = "wikitable"
+	tableClass    = "wikitable"
 )
 
 type cognitiveBias struct {
