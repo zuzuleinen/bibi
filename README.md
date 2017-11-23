@@ -19,5 +19,5 @@ $ cd $GOPATH/src/github.com/zuzuleinen/bibi/
 $ go install
 ```
 
-### Todo
+## Todo
 In the future, I might set it up to send e-mails at a certain interval.
