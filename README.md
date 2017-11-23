@@ -1,7 +1,7 @@
 # bibi
 Display a random cognitive bias on your terminal from the Wikipedia [List of cognitive biases](https://en.wikipedia.org/wiki/List_of_cognitive_biases).
 <p align="center">
-<img align="middle" src="demo.gif" width="200" />
+<img align="middle" src="tty.gif" width="200" />
 </p>
 
 
