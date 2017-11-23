@@ -1,9 +1,9 @@
 # bibi
-Display a random cognitive bias on your terminal
+Display a random cognitive bias on your terminal from the Wikipedia [List of cognitive biases](https://github.com/zuzuleinen/bibi/edit/master/README.md).
 
 ## About
 I'm very interested in human misjudgment especially cognitive biases, so I built a simple Go program which fetches a random cognitive bias and displays it on the terminal. 
-I think the more familiar is one with cognitive biases the more susceptible he is to avoid them.
+I think the more familiar is one with cognitive biases the more he is able to avoid them.
 
 ## Requirements
 
