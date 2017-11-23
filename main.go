@@ -69,6 +69,7 @@ func makeCognitiveBias(row *html.Node) cognitiveBias {
 	return cognitiveBias{}
 }
 
+//Display a cognitive bias to the terminal
 func (c *cognitiveBias) display() {
 	color.Green(c.name)
 	fmt.Println(c.description)
