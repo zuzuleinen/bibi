@@ -21,10 +21,10 @@ const (
 	tableClass    = "wikitable"
 )
 
-type cognitiveBias struct {
-	name        string
-	description string
-	url         string
+type CognitiveBias struct {
+	Name        string
+	Description string
+	Url         string
 }
 
 type Configuration struct {
@@ -46,7 +46,7 @@ func main() {
 	}
 
 	tables := scrape.FindAll(root, scrape.ByClass(tableClass))
-	var cogs []cognitiveBias
+	var cogs []CognitiveBias
 
 	for _, table := range tables {
 		rows := scrape.FindAllNested(table, scrape.ByTag(atom.Tr))
@@ -67,11 +67,11 @@ func main() {
 }
 
 //Construct a cognitive bias from a table row
-func makeCognitiveBias(row *html.Node) cognitiveBias {
+func makeCognitiveBias(row *html.Node) CognitiveBias {
 	cells := scrape.FindAllNested(row, scrape.ByTag(atom.Td))
 
 	if len(cells) < 2 {
-		return cognitiveBias{}
+		return CognitiveBias{}
 	}
 
 	firstCell := cells[0]
@@ -83,21 +83,21 @@ func makeCognitiveBias(row *html.Node) cognitiveBias {
 	if ok {
 		url = wikiPrefixUrl + scrape.Attr(urlNode, "href")
 	}
-	return cognitiveBias{scrape.Text(firstCell), scrape.Text(secondCell), url}
+	return CognitiveBias{scrape.Text(firstCell), scrape.Text(secondCell), url}
 }
 
 //Display a cognitive bias to the terminal
-func (c *cognitiveBias) display() {
-	color.Green(c.name)
-	color.White(c.description)
+func (c *CognitiveBias) display() {
+	color.Green(c.Name)
+	color.White(c.Description)
 
-	if c.url != "" {
-		color.Yellow("Find out more: %s", c.url)
+	if c.Url != "" {
+		color.Yellow("Find out more: %s", c.Url)
 	}
 }
 
 //Fetch a random cognitive bias
-func random(cogs []cognitiveBias) *cognitiveBias {
+func random(cogs []CognitiveBias) *CognitiveBias {
 	s := rand.NewSource(time.Now().Unix())
 	r := rand.New(s)
 	return &cogs[r.Intn(len(cogs))]
@@ -117,19 +117,19 @@ func fetchConfig() Configuration {
 }
 
 //Send an e-mail with the cognitive bias
-func send(c *cognitiveBias, conf Configuration) {
+func send(c *CognitiveBias, conf Configuration) {
 	mg := mailgun.NewMailgun(
 		conf.MailGunDomain,
 		conf.MailGunPrivateKey,
 		conf.MailGunPublicKey,
 	)
 
-	subject := "New Bias: " + c.name
+	subject := "New Bias: " + c.Name
 	body := "Hey, here is your daily dose of cognitive biases provided by <strong>bibi</strong>: <br /><br />"
-	body += fmt.Sprintf("<strong>%s</strong><br />", c.name)
-	body += fmt.Sprintf("%s <br />", c.description)
-	if c.url != "" {
-		body += fmt.Sprintf("Find out more: <a href=\"%s\">Wikipedia Link<a/>", c.url)
+	body += fmt.Sprintf("<strong>%s</strong><br />", c.Name)
+	body += fmt.Sprintf("%s <br />", c.Description)
+	if c.Url != "" {
+		body += fmt.Sprintf("Find out more: <a href=\"%s\">Wikipedia Link<a/>", c.Url)
 	}
 
 	m := mg.NewMessage(conf.SenderEmail, subject, "", conf.RecipientEmail)
