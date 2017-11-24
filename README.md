@@ -12,8 +12,8 @@ If you have a MailGun account you can also set up a daily reminder to your e-mai
 
 ## Requirements
 
-Go should be [installed and set up](https://golang.org/doc/install) on your system.
-You should have a [MailGun](https://www.mailgun.com) account if you plan to send the cognitive bias to your inbox.
+*Go should be [installed and set up](https://golang.org/doc/install) on your system.
+*You should have a [MailGun](https://www.mailgun.com) account if you plan to send the cognitive bias to your inbox.
 
 ## Installation
 
