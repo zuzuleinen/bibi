@@ -68,7 +68,6 @@ func makeCognitiveBias(row *html.Node) cognitiveBias {
 		url = wikiPrefixUrl + scrape.Attr(urlNode, "href")
 	}
 	return cognitiveBias{scrape.Text(firstCell), scrape.Text(secondCell), url}
-
 }
 
 //Display a cognitive bias to the terminal

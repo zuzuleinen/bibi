@@ -6,8 +6,8 @@ Display a random cognitive bias on your terminal from the Wikipedia [List of cog
 
 
 ## About
-I'm very interested in human misjudgment especially cognitive biases, so I built a simple Go program which fetches a random cognitive bias and displays it on the terminal. 
-I think the more familiar is one with cognitive biases the more he is able to avoid them.
+I'm very interested in human misjudgment especially cognitive biases, so I built a simple Go program which fetches a random cognitive bias from the Wikipedia [List of cognitive biases](https://en.wikipedia.org/wiki/List_of_cognitive_biases) and displays it on the terminal. 
+The purpose of this tool is to familiarise the user with as many cognitive biases as possible so he can have a better judgment. 
 
 ## Requirements
 
