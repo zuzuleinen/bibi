@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/fatih/color"
 	"github.com/yhat/scrape"
 	"golang.org/x/net/html"
@@ -73,7 +72,7 @@ func makeCognitiveBias(row *html.Node) cognitiveBias {
 //Display a cognitive bias to the terminal
 func (c *cognitiveBias) display() {
 	color.Green(c.name)
-	fmt.Println(c.description)
+	color.White(c.description)
 
 	if c.url != "" {
 		color.Yellow("Find out more: %s", c.url)
