@@ -54,19 +54,21 @@ func main() {
 func makeCognitiveBias(row *html.Node) cognitiveBias {
 	cells := scrape.FindAllNested(row, scrape.ByTag(atom.Td))
 
-	if len(cells) > 0 {
-		firstCell := cells[0]
-		secondCell := cells[1]
-
-		urlNode, ok := scrape.Find(firstCell, scrape.ByTag(atom.A))
-
-		url := ""
-		if ok {
-			url = wikiPrefixUrl + scrape.Attr(urlNode, "href")
-		}
-		return cognitiveBias{scrape.Text(firstCell), scrape.Text(secondCell), url}
+	if len(cells) < 2 {
+		return cognitiveBias{}
 	}
-	return cognitiveBias{}
+
+	firstCell := cells[0]
+	secondCell := cells[1]
+
+	urlNode, ok := scrape.Find(firstCell, scrape.ByTag(atom.A))
+
+	url := ""
+	if ok {
+		url = wikiPrefixUrl + scrape.Attr(urlNode, "href")
+	}
+	return cognitiveBias{scrape.Text(firstCell), scrape.Text(secondCell), url}
+
 }
 
 //Display a cognitive bias to the terminal
