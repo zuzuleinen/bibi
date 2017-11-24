@@ -16,8 +16,6 @@ You should have a [MailGun](https://www.mailgun.com) account if you plan to send
 
 ## Installation
 
-* Prepare the executable 
-
 ```shell
 $ go get github.com/zuzuleinen/bibi
 $ cd $GOPATH/src/github.com/zuzuleinen/bibi/
