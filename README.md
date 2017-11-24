@@ -27,12 +27,12 @@ $ go install
 
 ## Usage
 
-If you want to display the cognitive bias on your terminal simply run:
+If you want to __display the cognitive bias on your terminal__ simply run:
 ```shell
 $ bibi
 ```
 
-If you want to send the cognitive bias to your e-mail run the executable with --email flag:
+If you want to __send the cognitive bias to your e-mail__ run the executable with --email flag:
 ```shell
 $ bibi --email
 ```
