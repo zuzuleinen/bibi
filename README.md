@@ -23,7 +23,7 @@ $ cd $GOPATH/src/github.com/zuzuleinen/bibi/
 $ go install
 ```
 
-* If you want to set-up e-mail sending create a __conf.json__ file bases on the [conf.json.sample](https://github.com/zuzuleinen/bibi/blob/master/conf.json.sample) MailGun is supported only.
+* If you want to set-up e-mail sending create a __conf.json__ file bases on the [conf.json.sample](https://github.com/zuzuleinen/bibi/blob/master/conf.json.sample). MailGun is supported only.
 
 ## Usage
 
