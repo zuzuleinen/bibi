@@ -15,8 +15,6 @@ Go should be [installed and set up](https://golang.org/doc/install) on your syst
 
 ## Installation
 
-* Prepare the executable 
-
 ```shell
 $ go get github.com/zuzuleinen/bibi
 $ cd $GOPATH/src/github.com/zuzuleinen/bibi/
